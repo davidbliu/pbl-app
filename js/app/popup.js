@@ -20,7 +20,7 @@
 });
 
 myApp.controller("PageController", function ($scope, pageInfoService) {
-    $scope.message = "Hello from AngularJS";
+    $scope.message = "PBL's very own app";
 
     pageInfoService.getInfo(function (info) {
         $scope.title = info.title;
