@@ -1,5 +1,5 @@
-// ROOT_URL = 'http://testing.berkeley-pbl.com';
-ROOT_URL = 'http://localhost:3000'
+ROOT_URL = 'http://testing.berkeley-pbl.com';
+// ROOT_URL = 'http://localhost:3000'
 var token = '6461766964626c697540676d61696c2e636f6d';
 // var token = getParameterByName('token');
 var email = 'davidbliu@gmail.com';
