@@ -1,0 +1,45 @@
+<style type = 'text/css'>
+/*#add-followup-div{
+	display:none;
+}*/
+</style>
+<h2 class = 'heading'>Add a PBL Link</h2>
+<div id = 'add-input-box'>
+	<div class="input-group">
+	  <span class="input-group-addon" id="basic-addon1">pbl.link/</span>
+	  <input type="text" class="form-control" placeholder="enter a key here" aria-describedby="basic-addon1" ng-model = 'goKey' ng-keypress="addGolink($event)" id = 'add-input' autofocus>
+	</div>
+	<div>Redirects to</div>
+	<div><input type = 'text' class = 'form-control' placeholder = 'enter a url here' ng-model = 'goURL'></div>
+	<!-- <button class = 'btn btn-default' ng-click = 'addGolink()'>Add Link</button> -->
+</div>
+
+
+<div id = 'add-followup-div' ng-show = 'adding != null && adding == true'>
+	<h3>Adding your PBL Link...</h3>
+	<div>{{message}}</div>
+	<button class = 'btn btn-danger' ng-show = 'undoID != null' ng-click = 'undoAdd(undoID)'>Undo</button>
+</div>
+
+<div id = 'url-matches-div' ng-show = '(adding == null || adding == false) && (urlMatches != null && urlMatches.length > 0)'>
+	<h2 class = 'heading'>This URL is in PBL Links</h2>
+	<ul>
+		<li ng-repeat = 'match in urlMatches'>{{match}}</li>
+	</ul>
+</div>
+
+<div id = 'golink-info-div' ng-show = 'adding == null || adding == false'>
+	<h2 class = 'heading'>My Recently Added Links</h2>
+	<div class = 'col-md-6'>
+	<div ng-repeat = 'golink in myLinks | limitTo:15'><a target = '_blank' href = '{{golink.url}}'>{{golink.key}}</a></div>
+	</div>
+</div>
+
+
+
+<div id = 'golink-info-div' ng-show = 'adding == null || adding == false'>
+	<h2 class = 'heading'>Recent Links</h2>
+	<div class = 'col-md-6'>
+	<div ng-repeat = 'golink in golinks | limitTo:15'><a target = '_blank' href = '{{golink.url}}'>{{golink.key}}</a></div>
+	</div>
+</div>
