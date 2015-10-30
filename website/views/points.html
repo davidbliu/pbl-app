@@ -7,36 +7,16 @@
 <h1 class = 'centered'>PBL Points Scorecard</h1>
 
 <div class = 'row'>
-<div>Tabling: 5</div>
-<div>Make-up tabling (If they did not do tabling originally): 2</div>
-<div>Extra Tabling: 1</div>
-<div>Alumni Mixer: 5</div>
-<div>Nexus: 7</div>
-<div>Mandatory Events (Sec Gen, Third Gen, & Banquet): 7</div>
-<div>Executive Workshops (Mandatory): 7</div>
-<div>Betchel Info Session: 3</div>
-<div>IN Events: 3</div>
-<div>Faculty Dinners/Blueties Dinner: 3</div>
-<div>Officer Meetings: 3</div>
-<div>Ex Apprentice Challenges Attending: 3</div>
-<div>Open Workshops: 3</div>
-<div>Collaborative Events with other organizations (i.e.imagical): 5</div>
-<div>Filling out Feedback Forms: 1 each</div>
-<div>Mr.PBL: 5</div>
-<div>Other: TBD</div>
-</div>
+  <div class = 'col-md-4'>
+    <h2>By Committee</h2>
+    <div ng-repeat='committee in committees'>
+      {{committee}} : {{pointCommitteeHash[committee]}} points
+    </div>
+  </div>
 
-<div class = 'row'>
-	<h2>By Committee</h2>
-	<div ng-repeat='committee in committees'>
-		{{committee}} : {{pointCommitteeHash[committee]}} points
-	</div>
-</div>
-
-<div class = 'row'>
 	<div class = 'col-md-4'>
 		<h2>CMs</h2>
-		<div ng-repeat = 'member in cms'>
+		<div ng-repeat = 'member in cms | limitTo:10'>
 			<img src = '{{member.gravatar_url}}' class = 'profile-small'/>
 			{{member.name}}: {{pointHash[member.email]}}
 		</div>
@@ -44,12 +24,34 @@
 	</div>
 	<div class = 'col-md-4'>
 		<h2>Chairs</h2>
-		<div ng-repeat = 'member in chairs'>
+		<div ng-repeat = 'member in chairs | limitTo: 10'>
 			<img src = '{{member.gravatar_url}}' class = 'profile-small'/>
 			{{member.name}}: {{pointHash[member.email]}}
 		</div>
 	</div>
 
-	<div class = 'col-md-4'>
-	</div>
 </div>
+
+<div class = 'row'>
+  <h2>PBL Point System</h2>
+  <div class = 'point-system-div'>
+    <div>Tabling: 5</div>
+    <div>Make-up tabling (If they did not do tabling originally): 2</div>
+    <div>Extra Tabling: 1</div>
+    <div>Alumni Mixer: 5</div>
+    <div>Nexus: 7</div>
+    <div>Mandatory Events (Sec Gen, Third Gen, & Banquet): 7</div>
+    <div>Executive Workshops (Mandatory): 7</div>
+    <div>Betchel Info Session: 3</div>
+    <div>IN Events: 3</div>
+    <div>Faculty Dinners/Blueties Dinner: 3</div>
+    <div>Officer Meetings: 3</div>
+    <div>Ex Apprentice Challenges Attending: 3</div>
+    <div>Open Workshops: 3</div>
+    <div>Collaborative Events with other organizations (i.e.imagical): 5</div>
+    <div>Filling out Feedback Forms: 1 each</div>
+    <div>Mr.PBL: 5</div>
+    <div>Other: TBD</div>
+  </div>
+</div>
+

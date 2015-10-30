@@ -1,5 +1,5 @@
-ROOT_URL = 'http://testing.berkeley-pbl.com';
-// ROOT_URL = 'http://localhost:3000'
+// ROOT_URL = 'http://testing.berkeley-pbl.com';
+ROOT_URL = 'http://localhost:3000'
 var token = '6461766964626c697540676d61696c2e636f6d';
 // var token = getParameterByName('token');
 var email = 'davidbliu@gmail.com';
@@ -14,6 +14,14 @@ app.config(function($routeProvider) {
         .when('/', {
             templateUrl : 'views/points.html',
             controller  : 'PointsController'
+        })
+        .when('/tabling', {
+            templateUrl : 'views/tabling.html',
+            controller  : 'TablingController'
+        })
+        .when('/bb', {
+            templateUrl : 'views/bb.html',
+            controller  : 'BBController'
         })
         .otherwise({
           'redirect_to': '/'

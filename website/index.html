@@ -12,8 +12,14 @@
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <!-- authentication  -->
     <script src = './app.js'></script>
+    <!-- services -->
+    <script src = './services/members.js'></script>
+    <script src = './services/tabling.js'></script>
     <!-- controllers -->
     <script src = './controllers/points.js'></script>
+    <script src = './controllers/tabling.js'></script>
+    <script src = './controllers/bb.js'></script>
+
 
     <link rel="icon" 
           type="image/png" 
@@ -23,6 +29,9 @@
 
   </head>
   <body ng-app="pblApp">
+  	<a href = '#/bb'>Billboard</a>
+  	<a href = '#/tabling'>Tabling</a>
+  	<a href = '#/'>Points</a>
 
 <div ng-view=''></div>
   </body>

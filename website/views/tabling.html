@@ -1,0 +1,23 @@
+<style type = 'text/css'>
+.tabling-day{
+	float:left;
+	padding:10px;
+}
+.profile-image{
+	height:25px;
+	width:25px;
+}
+</style>
+<h1>Tabling</h1>
+
+<div class = 'row'>
+	<div ng-repeat = 'day in tablingDays' class = 'tabling-day'>
+		<div ng-repeat = 'slot in tablingSchedule[day] | orderBy:"time"'>
+			<div class = 'label label-primary'>{{timeString(slot.time)}}</div>
+			<ul>
+				<li ng-repeat = 'email in slot.member_emails'><img src = '{{memberHash[email].gravatar_url}}' class= 'profile-image'/>{{memberHash[email].name}}</li>
+			</ul>
+		</div>
+
+	</div>
+</div>
